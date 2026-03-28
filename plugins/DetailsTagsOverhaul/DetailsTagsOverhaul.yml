@@ -1,0 +1,31 @@
+name: DetailsTagsOverhaul
+description: Hierarchical read-only tag overview for scene, gallery, and image detail pages
+version: 0.1.2
+url: https://example.invalid/DetailsTagsOverhaul
+
+settings:
+  defaultExpanded:
+    displayName: Default Expanded
+    type: BOOLEAN
+
+  displayMode:
+    displayName: Tag Display Mode
+    type: STRING
+
+  imageSize:
+    displayName: Image Size
+    type: STRING
+
+  linkGroupHeaders:
+    displayName: Link Group/Subgroup Headers
+    type: BOOLEAN
+
+  showCollapseButtons:
+    displayName: Show Expand/Collapse Buttons
+    type: BOOLEAN
+
+ui:
+  javascript:
+    - DetailsTagsOverhaul.js
+  css:
+    - DetailsTagsOverhaul.css
