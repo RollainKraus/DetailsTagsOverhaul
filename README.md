@@ -17,6 +17,7 @@ The details tab now has Tag Groups organized by your parent-child tags and suppo
   <img src="/plugins/DetailsTagsOverhaul/images/DetailsTagsOverhaulSettingsPreview.png" alt="DetailsTagsOverhaul settings" width="600">
 </p>
 
+Made with AI
 
 ## License
 
