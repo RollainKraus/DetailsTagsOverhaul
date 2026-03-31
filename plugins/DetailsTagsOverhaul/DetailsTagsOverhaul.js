@@ -122,6 +122,14 @@
     return getConfigBoolean(cfg.showCollapseButtons, true);
   }
 
+  function shouldDuplicateMultiParentTags(cfg) {
+    return getConfigBoolean(cfg.duplicateMultiParentTags, true);
+  }
+
+  function shouldShowParentTagsAsSelectable(cfg) {
+    return getConfigBoolean(cfg.showParentTagsAsSelectable, true);
+  }
+
   function applyPanelVariables(panel, cfg) {
     const imageSize = getImageSize(cfg);
     const stackedImageSize = Math.max(24, imageSize);
@@ -267,9 +275,9 @@
     });
   }
 
-  function buildNestedGroupsSelectedOnly(tags, selectedTagIds) {
-    const duplicateMultiParentTags = false;
-    const showParentTagsAsSelectable = false;
+  function buildNestedGroupsSelectedOnly(tags, selectedTagIds, cfg) {
+    const duplicateMultiParentTags = shouldDuplicateMultiParentTags(cfg);
+    const showParentTagsAsSelectable = shouldShowParentTagsAsSelectable(cfg);
 
     const tagMap = new Map();
     tags.forEach((tag) => {
@@ -752,7 +760,7 @@
       state.currentEntity = latestEntity;
       state.selectedTagIds = selectedTagIds;
 
-      const groups = buildNestedGroupsSelectedOnly(allTags, selectedTagIds);
+      const groups = buildNestedGroupsSelectedOnly(allTags, selectedTagIds, cfg);
       if (!groups.length) return false;
 
       const panel = createPanel(groups, cfg);
